@@ -10,6 +10,6 @@ before_install:
   - docker run -ti rocker/verse /bin/sh -c "cd ~;"
 
 install:
-    - docker run -ti -v $(pwd):/home/rstudio/repo -w /home/rstudio/repo -e "source .build_tools/travis/install.sh"
+    - docker run -ti -v $(pwd):/home/rstudio/repo -w /home/rstudio/repo rocker/verse -e "source .build_tools/travis/install.sh"
 script: 
-    - docker run -ti -v $(pwd):/home/rstudio/repo -w /home/rstudio/repo -e "source .build_tools/travis/test_script.sh"
+    - docker run -ti -v $(pwd):/home/rstudio/repo -w /home/rstudio/repo rocker/verse -e "source .build_tools/travis/test_script.sh"
