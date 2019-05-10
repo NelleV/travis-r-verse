@@ -4,4 +4,4 @@ services:
   - docker
 
 script:
-  - docker run -ti rocker/verse
+  - docker run -ti rocker/verse -e "install.packages('NMI')"
