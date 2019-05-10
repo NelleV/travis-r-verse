@@ -7,7 +7,7 @@ before_install:
   - docker pull rocker/verse
   - docker run -d -p 127.0.0.1:80:4567 rocker/verse /bin/sh -c "cd ~; "
   - docker ps -a
-  - docker run carlad/sinatra /bin/sh -c "cd ~;"
+  - docker run rocker/verse /bin/sh -c "cd ~;"
 
 install: source .build_tools/travis/install.sh
 script: source .build_tools/travis/test_script.sh
